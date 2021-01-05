@@ -4,7 +4,7 @@
 
 body{
     background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), 
-    url(a511.png) no-repeat;
+    url(../assets/a511.png) no-repeat;
     background-size: cover;
     
 }
@@ -28,30 +28,27 @@ ul li {
     border: 10px olive solid;    
 }
 
-li:nth-child(even){
+li:nth-child(1){
     font-family: 'Staatliches', cursive, sans-serif;
     font-style: italic;
 }
-li:nth-child(odd){
+li:nth-child(2n){
     font-family: 'Hanalei', cursive, sans-serif;
     font-weight: bold;
     color: blueviolet;
 }
+li:nth-child(3n){
+    font-family: 'Hanalei', cursive, sans-serif;
+    font-weight: bold;
+    color: blue;
+}
 
 .left li:nth-of-type(even){
-    background: linear-gradient(to right, blue, red);
-    color: pink;
-}
-.left li:nth-of-type(3n){
-    color: yellow;    
+    background: linear-gradient(to right, blue, red);    
 }
 
 .right li:nth-of-type(odd){
     background: linear-gradient(to right, blue, red);    
-}
-
-.right li:nth-of-type(3n){
-    color: yellow;    
 }
 
 li:hover::after{        

@@ -14,9 +14,27 @@
 
 <!-- Making Tooltips using pseudo elements -->
 <style>
-    li:hover::after{        
+    li:hover::after {
         content: "THIS LOOKS BLOODY AWFUL (￣▽￣)";
         color: black;
-        background-color: white;        
+        background-color: white;
+    }
+</style>
+
+<!-- Best to set *{ box-sizing: border-box } -->
+
+
+<!-- How to use inline-box to make a horizontal list -->
+<style>
+    .nav {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav li {
+        display: inline-block;
+        font-size: 20px;
+        padding: 5px;
     }
 </style>
