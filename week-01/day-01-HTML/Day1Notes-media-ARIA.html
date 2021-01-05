@@ -1,0 +1,28 @@
+<!-- ARIA property for people using AT (assistive technology, like screen readers) -->
+<header role="banner">
+    <h1>Another Website</h1>
+</header>
+
+<!-- embed video -->
+<video src="myvideo.mp4" poster="firstimage.jpg" controls></video>
+
+<!-- embed audio -->
+<audio src="myaudio.mp3" controls></audio>
+
+<!-- cycle through filetypes in case one doesn't work -->
+<!-- works for audio or video, just change enclosing tags -->
+<video src="myvideo.mp4" poster="firstimage.jpg" controls>
+    <source src="/media/examples/flower.webm" type="video.webm">
+    <source src="/media/examples/flower.webm" type="video.mp4">
+</video>
+
+<!-- embed picture + different source -->
+<picture>
+    <source srcset="/media/examples/surfer-240-200.jpg" media="(min-width: 800px)">
+</picture>
+
+<!-- embed diagram with caption -->
+<figure>
+    <img src="/media/examples/elephant-660-480.jpg" alt="Elephant at sunset">
+    <figcaption>An elephant at sunset</figcaption>
+</figure>

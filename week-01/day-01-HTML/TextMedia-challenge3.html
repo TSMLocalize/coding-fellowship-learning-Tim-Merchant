@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="raindrop.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="Sectioning-challenge2.css" type="text/css">
+    <title>Raindrops</title>
+</head>
+
+<body>
+    <header role="banner">
+        <h1>My Site</h1>
+    </header>
+
+    <nav role="navigation">
+        <a href="#">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <main role="main">
+        <article>
+            <section>
+                <header>
+                    <h2>Cool video</h2>
+                </header>
+                <video id='player' src="videofortest.mp4" poster="smallDrops.jpg" controls>
+                    <source src="/media/examples/flower.webm" type="video.webm">
+                    <source src="/media/examples/flower.webm" type="video.mp4">
+                </video>
+                <button onclick="goFullscreen('player'); return false">
+                    Fullscreen
+                </button>
+            </section>
+            <section>
+                <header>
+                    <h2>Picture, with caption</h2>
+                </header>
+                <figure>
+                    <img src="smallDrops.jpg" alt="raindrops">
+                    <figcaption>Droppety drop</figcaption>
+                </figure>
+            </section>
+        </article>
+        <article>
+            <header>
+                <h2>Reusable Content</h2>
+
+                <blockquote>
+                    <em>Eleanor Roosevelt once said:</em>
+                    <p><q>You must do the things you think you cannot do.</q></p>
+                </blockquote>
+            </header>
+            <section>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <strong>Quasi labore, minus magnam nostrum
+                        quis omnis sunt!</strong>Expedita asperiores nihil placeat.</p>
+                <p>Christmas is the 25<sup>th</sup> December</p>
+            </section>
+        </article>
+
+
+        <aside>
+            <article>
+                <header>
+                    <h3>This content isn't main content</h3>
+                </header>
+                <section>
+
+                    <ol>
+                        <li>First List Item</li>
+                        <li>This list item has a class of second</li>
+                        <li>Third li</li>
+                    </ol>
+                </section>
+                <section>
+                    <table>
+                        <tr>
+                            <th>Dessert</th>
+                            <th>Calories</th>
+                            <th>Fat</th>
+                            <th>Carbs</th>
+                        </tr>
+                        <tr>
+                            <td>Frozen yogurt</td>
+                            <td>159</td>
+                            <td>6.0</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>Ice cream sandwich</td>
+                            <td>237</td>
+                            <td>9.0</td>
+                            <td>37</td>
+                        </tr>
+                        <tr>
+                            <td>Eclair</td>
+                            <td>262</td>
+                            <td>16.0</td>
+                            <td>24</td>
+                        </tr>
+                    </table>
+                </section>
+            </article>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>&#169 Copyright DevMe 2020</p>
+    </footer>
+
+    <script type="text/javascript">
+        function goFullscreen(id) {
+            var element = document.getElementById(id);
+            if (element.webkitRequestFullScreen) {
+                element.webkitRequestFullScreen();
+            }
+        }
+    </script>
+</body>
+
+</html>
