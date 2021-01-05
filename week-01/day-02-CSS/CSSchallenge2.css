@@ -1,3 +1,9 @@
+@font-face{
+    font-family: 'Staatliches';
+    font-weight: normal;
+    font-style: normal;
+    src: url("./Staatliches-Regular.ttf") format('truetype');    
+}
 
 body {
     font-family: 'Hanalei Fill', cursive, sans-serif;
@@ -5,4 +11,6 @@ body {
 
 h1, h2 {
     font-family: 'Staatliches';
+    font-weight: normal;
+    font-style: normal;
 }

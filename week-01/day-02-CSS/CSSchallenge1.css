@@ -54,16 +54,10 @@ li:nth-child(odd){
     color: yellow;    
 }
 
-.right li:nth-of-type(3n)::after{        
+li:hover::after{        
     content: "THIS LOOKS BLOODY AWFUL (￣▽￣)";
     color: black;
 }
-
-.left li:nth-of-type(3n)::after{
-    content: "THIS LOOKS BLOODY AWFUL (￣▽￣)";
-    color: black;
-}
-
 
 
 

@@ -7,6 +7,16 @@
         font-family: "Poppins";
         font-style: normal;
         font-weight: normal;
-        src: url("../fonts/Poppins-Light.ttf") format(truetype)
+        src: url("../fonts/Poppins-Light.ttf") format('truetype')
+    }
+</style>
+
+
+<!-- Making Tooltips using pseudo elements -->
+<style>
+    li:hover::after{        
+        content: "THIS LOOKS BLOODY AWFUL (￣▽￣)";
+        color: black;
+        background-color: white;        
     }
 </style>
