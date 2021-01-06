@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="raindrop.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="./css/article.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet">
+    <title>Raindrops</title>
+</head>
+
+<body>
+    <div class="banner">
+        <header role="banner">
+            <h1>My Site</h1>
+        </header>
+
+        <nav role="navigation">
+            <div class="nav">
+                <ul>
+                    <li><a class="home" href="#">Home</a></li>
+                    <li><a class="blog" href="#">Blog</a></li>
+                    <li><a class="contact" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <main role="main">
+        <article>
+            <div class="mainArticle">
+                <h2>An Article</h2>
+                <p>Written on 21<sup>st</sup> February</p>                
+                <img src="./assets/a511.png" alt="pictureFromFF5">
+                <div class="lower">
+                    <picture>
+                        <source media="(max-width:600px)" srcset="./assets/a511.png">
+                        <source media="(min-width:600px)" srcset="./assets/WP_20200502_14_11_01_Pro.jpg">
+                        <img src="./assets/WP_20200502_14_11_01_Pro.jpg" alt="Flowers" style="width:auto;">
+                    </picture>  
+                    <!-- <img src="./assets/WP_20200502_14_11_01_Pro.jpg" alt="pictureFromFF5"> -->
+                    <p class="rightPara">Lorem ipsum dolor sit <strong>consectetur adipisicing elit. Sed</strong>
+                        numquam quibusdam odit
+                        culpa
+                        dolores mollitia iure? Harum tenetur nostrum expedita excepturi dolorem ipsam natus omnis, nemo
+                        necessitatibus eaque suscipit perspiciatis?</p>
+                    <p class="finalPara">Lorem ipsum dolor sit <em>consectetur adipisicing elit. Sed</em> numquam
+                        quibusdam odit culpa
+                        dolores
+                        mollitia iure? Harum tenetur nostrum expedita excepturi dolorem ipsam natus omnis, nemo
+                        necessitatibus
+                </div>
+            </div>
+        </article>
+        <aside class="aside2">
+            <li>
+                <a href="#" class="articleLink">Article 1</a>
+                <a href="#" class="articleLink">Article 2</a>
+                <a href="#" class="articleLink">Article 3</a>
+                <a href="#" class="articleLink">Article 4</a>
+                <a href="#" class="articleLink">Article 5</a>
+            </li>
+        </aside>
+        <footer>
+            <div class="foot">
+                <button class="readMoreBtn">Read More</button>
+                <p>&#169 Copyright DevMe 2020</p>
+            </div>
+        </footer>
+    </main>
+
+
+</body>
+
+</html>
