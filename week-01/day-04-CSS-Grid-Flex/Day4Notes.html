@@ -1,0 +1,35 @@
+<style>
+
+/* flexbox */
+
+.container {
+    display: flex;
+    /* defines a flex container */
+    flex-direction: column-reverse;
+    /* row, row-reverse, column, column-reverse */
+    flex-wrap: wrap;
+    /* wrap, wrap-reverse, nowrap */
+    flex-flow: column wrap;
+
+    align-items: baseline;
+
+    justify-content: space-evenly;
+    /* space-evenly not supported on IE */                
+}
+
+.item {
+    flex-basis: auto;
+    /* looks to see if we have set an actual width on container, if none then it will use content width, otherwise if we set a value (eg. 400px) it will use that value */
+    /* best practice is to use flex-basis rather than setting a width or height */
+    flex-shrink: 3;
+    flex-grow: 1;
+    /* sets the proportion of remaining space to take up eg. 3 items with flex-grow 1, 2, 3 each respectively would take up that much of the remaining space */
+    flex: auto 3 1;
+    /* shorthand for all 3 of the above */
+
+    order: 1; 
+    /* sets an order with higher number items appearing near the end*/
+    /* order is 0 by default */
+}
+
+</style>

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,700&display=swap');
+
+body {
+	font-family: 'Heebo', sans-serif;
+	font-size: 120%;
+	line-height: 1.4;
+	padding: 20px;
+}
+
+.promos {}
+.card {}
+
+
+
+.promos {
+	display: flex;
+	justify-content: space-between;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	
+	width: 32%; box-sizing: border-box;
+	padding: 2rem 1rem;
+	background-color: white;
+	background-image: linear-gradient(180deg, darkblue 4rem, white 4rem);
+	border: 1px solid darkblue;
+	border-radius: 2px;
+	text-align: center;
+}
+
+header, p {
+	margin-bottom: 20px;
+}
+header {
+	flex-grow: 1;
+}
+.cost {
+	align-self: center;
+	order: -1;
+	padding: 1rem;
+	background-color: coral;
+	border: 3px solid white;
+	border-radius: 50%;
+	color: white; font-weight: bold;
+}
+.amount {
+	font-weight: bold;
+}
+a {
+	display: block;
+	padding: 16px;
+	background-color: coral;
+	border: 2px solid orangered;
+	text-decoration: none; color: white;
+	font-weight: bold;
+}
+a:hover {
+	background-color: white;
+	color: orangered;
+}

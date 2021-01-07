@@ -1,0 +1,248 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face{
+    font-family: 'Staatliches';
+    font-weight: normal;
+    font-style: normal;
+    src: url("../assets/Staatliches-Regular.ttf") format('truetype');    
+}
+
+body{
+    background: rgb(233, 233, 203);               
+}
+
+/* Banner and Nav */
+
+.banner {    
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+    width: 100vw;    
+    background: linear-gradient(90deg,#ffffff, rgb(179, 179, 179));    
+    border: #32a852 solid 2px;
+    padding: 30px;    
+    border-left: none;
+}
+
+header{
+    justify-self: flex-start;
+}
+
+nav {
+    justify-self: flex-end;    
+}
+
+.nav {  
+    list-style-type: none;    
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px;
+  }
+
+h1 {            
+    margin: 0;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    top: 0;
+    left: 0;    
+    vertical-align: text-top;
+    font-size: 6rem;        
+    padding: 0;
+}
+
+a{
+    border: 1px #ff87c1 solid;
+    padding: 20px;
+    margin-right: 3px;
+    background: #ffffff;    
+    font-size: 1rem;
+}
+
+a:hover {
+    background: rgb(218, 132, 147);  
+}
+
+/* Main Article */
+
+.mainContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.mainArticle {    
+    background: linear-gradient(90deg, rgba(250, 0, 0, 0.5), rgba(255, 0, 0, 0.3));   
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    width: 75vw;    
+    padding: 30px; 
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    border: 1px solid black;    
+    border-radius: 10px;
+    font-size: 0.9rem;
+    overflow: hidden;          
+    float: left;  
+}
+
+.container {    
+    display: flex;    
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.item {
+    border: solid black 1px;
+    flex-basis:300px;   
+    margin: 30px; 
+}
+
+.mainArticle p {    
+    padding: 1em;
+}
+
+.mainArticle img {    
+    max-width: 100%;           
+}
+
+/* Aside */
+
+aside {       
+    display: flex;     
+    justify-content: flex-end;
+    width: 7rem;   
+    /* margin: 0 auto;
+    margin-top: 30px;      */
+}
+
+aside a {
+    display: block;
+    width: 7rem;    
+}
+
+aside li {        
+    list-style: none;
+}
+
+/* Footer */
+
+.foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    clear: both;
+}
+
+.foot p {
+    /* justify-self: center; */
+}
+
+body {
+    font-family: 'Hanalei Fill', cursive, sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Staatliches';
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 600px){
+    .banner{        
+        background: linear-gradient(90deg,#ffffff, blue);         
+    }
+    .mainArticle {        
+        width: 85vw;            
+        float: none;        
+    }
+
+    aside{
+        visibility: hidden;
+    }    
+
+    .mainArticle p {        
+        max-width: 45%;
+        padding: 1em;
+    }
+    
+    .mainArticle img {        
+        height: 200px;
+        width: 100%;        
+        max-width: 100%;   
+        margin-right: 1em;   
+        margin: auto;  
+    }
+}
+
+/* Tooltips */
+
+a:hover::before {    
+    content: '';
+    color: #ffffff;
+    position: absolute;
+    background: #949292;    
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 40px;
+    cursor: default;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+}
+
+.home:hover::before{
+    content: 'Click here to return home';    
+}
+.blog:hover::before{
+    content: 'Click here to access blog';
+}
+.contact:hover::before{
+    content: 'Click here to access contacts';
+}
+.articleLink:hover::before{
+    content: 'Click here to read this article';            
+    width: 10rem;
+    padding: 20px;    
+    margin-top: 20px;      
+    margin-left: -230px;  
+}
+
+.readMoreBtn {    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    background-color: seagreen;
+    border: 3px green solid;
+    border-radius: 3px;
+    padding: 15px 30px;     
+}
+
+.readMoreBtn:hover {    
+    cursor: pointer;
+    background-color: rgb(108, 218, 155);
+    border: 3px rgb(7, 87, 7) solid;
+}
+
+.readMoreBtn:hover::before {    
+    content: 'Click here to learn more.';
+    position: absolute;
+    background: grey;    
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: -80px;
+    cursor: default;
+}
+
