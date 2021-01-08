@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,700&display=swap');
+
+/* fill in flex css here */
+.promos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;            
+}
+
+.card {    
+    display: flex;
+    flex-direction: column;    
+}
+
+
+
+
+
+
+
+/* don't worry about this ----------*/
+body {
+	font-family:'Heebo', sans-serif;
+	font-size: 120%;
+	padding: 20px;
+}
+
+.card {
+	padding: 20px;
+	background-color: white;
+	text-align: center;
+}
+
+.card:nth-of-type(1) {
+	border-right: 1px solid plum;
+}
+
+header, p, a {
+	margin-bottom: 30px;
+}
+h3 {
+	font-weight: bold;
+}
+a {
+	display: block;
+	padding: 16px;
+	background-color: plum;
+	border: 2px solid purple;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+a:hover {
+	color: purple;
+	background-color: white;
+}
