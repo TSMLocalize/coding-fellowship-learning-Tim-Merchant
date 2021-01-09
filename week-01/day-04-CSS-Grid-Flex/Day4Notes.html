@@ -1,4 +1,11 @@
 <style>
+    /* floats */
+
+    .parent {
+        display: flow-root;
+        /* Apply this on parent element with floated children to prevent it collapsing */
+    }
+    
     /* flexbox */
 
     .container {
@@ -14,6 +21,8 @@
 
         justify-content: space-evenly;
         /* space-evenly not supported on IE */
+
+        
     }
 
     .item {
@@ -28,6 +37,7 @@
         order: 1;
         /* sets an order with higher number items appearing near the end*/
         /* order is 0 by default */
+
     }
 
     /* grid */
