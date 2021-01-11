@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+.headerContainer{
+  display: inline-block;  
+}
+
+a{
+  text-decoration: none;
+}

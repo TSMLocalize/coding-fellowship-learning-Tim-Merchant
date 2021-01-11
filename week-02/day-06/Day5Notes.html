@@ -1,0 +1,165 @@
+<!-- Requirements Gathering & Project Process -->
+
+<!-- 
+    Personas & typical behaviors 
+    Sitemap
+    Scamp
+    Wireframe
+    Prototyping
+-->
+
+<!-- 
+Who are your users?
+What are they trying to do?
+With which techonology?
+     - Media Queries important!
+What are the business aims?
+ -->
+
+ <!-- 
+YOU ARE NOT YOUR USER 
+Hotjar - check what people click on.
+People often click on stuff that's not a button.
+-->
+
+<!-- User Stories
+How team based code work is divided up 
+
+JIRA - ticketing system for different jobs to be done by a dev team
+-->
+
+<!-- Determine target audience -->
+<!-- banner should appeal to 
+prospective students, hirers, partners -->
+<!-- Should use key words 'Develop your Future' in the banner -->
+<!-- Community focused -->
+
+<!-- CTAs - call to action 
+Big large buttons to draw people's attention
+-->
+
+<!-- Trying to make sure people who inquire go on to book as well -->
+
+<!-- BRIEF -->
+<!-- I'm a professional photographer with an established portfolio. I'd like to increase my online presence and promote my business through digital means.
+
+Itnerested parties should be able to get in touch. I would like to be able to manage work and other interesting content-->
+
+<!-- GlooMaps - sitemaps -->
+
+<!-- SCAMP basically drawing the website, like, storyboarding -
+Good to have different media query sizes-->
+<!-- bitpaper.io -->
+
+<!-- Wireframing - checking functionality with limited styling etc. -->
+<!-- Wireframe software
+balsamiq
+moqups
+UXPin
+AdobeXD -->
+
+
+
+
+
+
+<!-- Day 4 Reference Notes -->
+
+<style>
+    /* flexbox */
+
+    .container {
+        
+        display: flex;
+        /* defines a flex container */
+        flex-direction: column-reverse;
+        /* row, row-reverse, column, column-reverse */
+        flex-wrap: wrap;
+        /* wrap, wrap-reverse, nowrap */
+        flex-flow: column wrap;
+
+        align-items: baseline;
+
+        justify-content: space-evenly;
+        /* space-evenly not supported on IE */
+    }
+
+    .item {
+        flex-basis: auto;
+        /* looks to see if we have set an actual width on container, if none then it will use content width, otherwise if we set a value (eg. 400px) it will use that value */
+        /* best practice is to use flex-basis rather than setting a width or height */
+        flex-shrink: 3;
+        flex-grow: 1;
+        /* sets the proportion of remaining space to take up eg. 3 items with flex-grow 1, 2, 3 each respectively would take up that much of the remaining space */
+        flex: auto 3 1;
+        /* shorthand for all 3 of the above */
+        order: 1;
+        /* sets an order with higher number items appearing near the end*/
+        /* order is 0 by default */
+    }
+
+    /* grid */
+
+    .container {
+        display: grid;
+        gap: 1vw;
+        row-gap: 1vw;
+        column-gap: 2vw;
+        /* Older: grid-gap, grid-column-gap, grid-row-gap */
+
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(3, minmax(50px, 200px));
+
+        grid-template-rows: 4rem 1fr 1fr 4rem;
+        grid-template-columns: repeat(3, 10rem);
+
+        grid-template-areas:
+        "title . title"
+        "nav content-1 content-1"
+        "nav . content-2"
+        "foot foot .";        
+        /* . indicates a blank cell */
+
+        grid-template:
+        "title . title" 60 px
+        "nav content-1 content-1" 1fr
+        "nav . content-2" 60px
+        / 20% 1fr 15%;        
+        /* This sets the row size for each row, then sets the column size ratio after the / */
+
+    }
+
+    /* for grid template areas */
+    .title{
+        grid-area: title;
+    }
+
+    .nav {
+        grid-area: nav;
+    }
+    /* etc. */
+
+    .item {
+        grid-column-start: 2;
+        grid-column-end: 4;
+
+        grid-row-start: 1;
+        grid-row-end: 2;
+
+        grid-row: 2/3;
+        grid-column: 2/3;
+
+        grid-area: 2/3/3/4;
+        /* Starting Row Line / Starting Column Line / End Row Line / End Column Line */        
+        
+        grid-area: 2/3/span 2/span 4;
+        /* Starting Row Line / Starting Column Line / End Row Line / End Column Line */     
+        /* Now with spans! */
+
+        grid-row-end: span 3;
+        /* The grid-row-end CSS property specifies a grid item’s end position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-end edge of its grid area. */
+    }
+
+
+    
+</style>

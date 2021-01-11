@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+}
+
+.container1 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(4, 10rem);
+}
+
+.container2 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 10rem);  
+  text-align: right;
+}
+
+li {
+  list-style: none;
+  display: flex;        
+}
+
+li .number{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  flex-basis: 400px;
+  font-size: 100px;
+  align-self: flex-start;    
+  text-align: end;  
+}
+
+.container2 li .number {
+  text-align: start;
+}
+
+.container1 li:nth-of-type(1) {
+  grid-area: 1 / 2 / span 1 / span 3;
+  color: rgb(50, 197, 148);
+}
+.container1 li:nth-of-type(2) {
+  grid-area: 2 / 3 / span 1 / span 3;
+  color: grey;
+}
+.container1 li:nth-of-type(3) {
+  grid-area: 3 / 4 / span 1 / span 3;
+}
+.container1 li:nth-of-type(4) {
+  grid-area: 4 / 3 / span 1 / span 3;
+  color: rgb(50, 197, 148);
+}
+
+.container2 li:nth-of-type(1) {
+  grid-area: 1 / 1 / span 1 / span 3;
+  color: grey;  
+}
+.container2 li:nth-of-type(2) {
+  grid-area: 2 / 2 / span 1 / span 3;
+}
+.container2 li:nth-of-type(3) {
+  grid-area: 3 / 3 / span 1 / span 3;
+  color: rgb(50, 197, 148);
+}
+.container2 li:nth-of-type(4) {
+  grid-area: 4 / 2 / span 1 / span 3;
+  color: grey;
+}
