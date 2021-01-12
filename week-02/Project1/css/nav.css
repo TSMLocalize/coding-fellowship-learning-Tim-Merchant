@@ -1,0 +1,63 @@
+@import '/css/global.css';
+@import '/css/variables.css';
+
+.nav{    
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;  
+    margin: 0 5%;              
+}
+
+.nav__link {
+    font-family: var(--nun-regular);
+}
+
+.nav__links{        
+    display: flex;        
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5vw;           
+}
+
+.nav__logo {
+    font-family: var(--pacifico);    
+}
+
+.nav__expand {
+    display: none;
+}
+
+/* Medium (780px) */
+
+@media screen and (max-width: 780px) {    
+    
+    .nav__link {
+        display: none;
+    }
+
+    .nav__icon {
+        display: none;
+    }
+
+    .nav__expand{
+        display: inline;
+    }
+}
+
+/* Small (500px) */
+@media screen and (max-width: 500px) {    
+    
+    .nav__link {
+        display: none;
+    }
+
+    .nav__icon {
+        display: none;
+    }
+
+    .nav__expand{
+        display: inline;
+    }    
+}

@@ -1,0 +1,25 @@
+@import '/css/global.css';
+@import '/css/variables.css';
+
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.footer__links {        
+    display: flex;        
+}    
+
+.footer__link-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--off-white);
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;        
+    margin: 0 1.5rem;
+}    

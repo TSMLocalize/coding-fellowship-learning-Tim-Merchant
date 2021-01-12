@@ -1,0 +1,37 @@
+    @import '/css/global.css';
+    @import '/css/variables.css';
+    
+    .article {
+        width: 60vw;
+    }    
+
+    .article__title{        
+        font-family: var(--nun-regular);
+    }
+    
+    .article__content {
+        font-family: var(--nun-regular);
+        line-height: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;       
+    }
+
+    .article__aside {
+        width: 25vw;
+    }
+
+    .article__aside-title{        
+        font-family: var(--nun-regular);
+    }
+
+    .article__aside-entry{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .article__link {
+        margin-top: 1rem;
+        color: black;
+        font-family: var(--nun-regular);
+    }

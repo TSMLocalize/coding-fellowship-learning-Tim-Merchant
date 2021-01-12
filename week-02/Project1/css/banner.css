@@ -1,0 +1,21 @@
+    @import '/css/global.css';
+    @import '/css/variables.css';
+
+    .banner {
+
+    }
+
+    .banner__bg{
+        width: 96vw;
+        background: var(--off-white);
+        margin: 2vw;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .banner__text{
+        font-size: 2.5rem;
+        font-family: var(--nun-bold);
+    }    

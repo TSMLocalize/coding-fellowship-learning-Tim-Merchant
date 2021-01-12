@@ -1,0 +1,41 @@
+@import '/css/global.css';
+@import '/css/variables.css';
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 70%;
+}
+
+.form__entry{
+    display: flex;
+    flex-direction: column;      
+    gap: .5rem;  
+}
+
+.form__label {
+    font-family: var(--nun-regular);
+    font-size: smaller;
+}
+
+.form__input{        
+    padding: 1rem;        
+    border: var(--light-grey) solid 1px;
+}
+
+.form__input--textarea{
+    width: 100%;
+    padding: 1rem;        
+    border: var(--light-grey) solid 1px;
+    resize: none;
+}
+
+.form__input--submit{  
+    width: 10rem;
+    font-family: var(--nun-XL);
+    background: var(--pink); 
+    border: none;
+    color: white;              
+    padding: 15px 33px;
+}

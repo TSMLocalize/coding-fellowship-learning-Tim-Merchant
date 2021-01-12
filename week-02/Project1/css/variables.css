@@ -1,0 +1,12 @@
+:root {
+    --dark-grey: #4A4A4A;
+    --light-grey: #B2B5BA;
+    --pink: #FF6A7C;
+    --off-white: #FFF0E9;
+    --turquoise: #41CADD;
+    --nun-XL: Nunito-xlight, Helvetica, sans-serif;
+    --nun-regular: Nunito-regular, Helvetica, sans-serif;
+    --nun-bold: Nunito-Bold, Helvetica, sans-serif;
+    --pacifico: Pacifico, Helvetica, sans-serif;        
+    --pattern-spacing: 3rem;    
+ }
