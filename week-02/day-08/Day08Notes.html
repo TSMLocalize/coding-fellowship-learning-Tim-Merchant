@@ -1,0 +1,107 @@
+<!-- TESTING -->
+
+    <!-- automated, manual -->
+    <!-- crossbrowsertesting -->
+
+    <!-- BrowserStack - for cross browser testing -->
+    <!-- Lets you check stuff on different devices -->
+    <!-- You can also test in development tools -->
+
+    <!-- Caniuse.com check whether it's supported -->
+    <!-- Grid came out in 2013, sometimes you need prefixes to support it on old stuff (check caniuse) -->
+
+    <!-- autoprefixer - can add all your prefixes for you -->
+    <!-- NPM package autoprefixer which will prefix everything automatically for you -->
+
+    <!-- Modernizr - feature detection -->
+    <!-- Browsers have a 'user agent' you visit a website, the user agent tells you abotu the device being used to access -->
+    <!-- Modernizr adds classes to the body -->
+
+    <!-- @supports - not well supported yet, but becoming prominent -->
+
+
+    <!-- team will sit down, check google analytics, check what level of support we're using for our browsers -->
+
+    <style>
+        @supports (display: grid) {
+            .gallery {
+                display: grid;
+            }
+        }
+    </style>
+
+    <!-- Ask others to check the code on github after you've done crossbrowser testing, and then they will also do cross browser testing too -->
+    <!-- They will point out bugs and show the code that it most likely refers to -->
+
+    <!-- polyfills -->
+    <!-- You can use sudo, javascript, and npm to import packages and get unsupported stuff to be supported-->
+
+    <!-- cy-test -->
+    <!-- acts as a user on the site for you -->
+    <!-- checks whether stuff works -->
+
+    <!-- You can use the network tab to throttle your connection and check how fast stuff will load on, like, 3G etc. -->
+
+    <!-- Try supporting IE 11 on the project! -->
+    <!-- Validate cde in W3C validator -->
+
+
+<!-- WEB ACCESSIBILITY -->
+
+    <!-- All of these things should be in the style guide at the beginning -->
+    
+    <!-- It's best to build accessibility at the VERY START of the project -->
+    <!-- Easily click-able buttons -->
+    <!-- Decent Font-size -->
+    
+    <!-- public websites need to meet same standard as gov.uk website -->
+    <!-- all about making things inclusive for absolutely everybody -->
+    <!-- A AA AAA levels of accessibility -->
+    <!-- Vision Australia - meets AAA standards -->
+    <!-- You have to meet certain criteria to make it accessible to a wide array of users -->
+    
+    <!-- Think about sight, hearing impaired, hand impaired (no mouse), color blindness -->
+    
+    <!-- Increasing accessibility = larger userbase for the company -->
+    
+    <!-- Public websites need to meet the AA standard or users can sue them -->
+    
+    <!-- W3 How to Meet WCAG -->
+    
+    <!-- LIGHTHOUSE - part of chrone development tools 
+    
+        Audits site, generates report about accessibility to 100%
+    -->
+
+    <!-- Make sure to have the right semantic html tags for the sake of screen readers -->
+
+    <!-- Vimium - adds key aliases for everything on the site -->
+
+    <!-- Spectrum - Google Chrome, tests website for different color blindness -->
+
+    <!-- ARIA -->
+    <!-- 
+        aria-controls="success-message"
+        aria-controlledby="btn"
+
+        Tells a screen reader which thing a button controls
+
+        Used for describing relationships between elements
+
+        aria-hidden="true"
+        only sends the message to the screen reader after the event (when true)
+
+    -->
+    <style>
+        .success[aria-hidden="false"] {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- YOU MAY GET INTERVIEW QUESTIONS ON ARIA AND HOW IT IS USED -->
+
+    <!-- WAVE Evaluation Tool -->
+    <!-- 
+        
+     -->
+

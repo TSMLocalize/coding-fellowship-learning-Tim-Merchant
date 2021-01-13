@@ -2,14 +2,15 @@
     @import '/css/variables.css';
 
     .banner {
-
+        width: 95%;        
+        display: flex;
+        justify-content: center;
+        height: 12rem;
     }
 
     .banner__bg{
-        width: 96vw;
-        background: var(--off-white);
-        margin: 2vw;
-        height: 200px;
+        width: 100%;
+        background: var(--off-white);        
         display: flex;
         align-items: center;
         justify-content: center;
@@ -19,3 +20,28 @@
         font-size: 2.5rem;
         font-family: var(--nun-bold);
     }    
+
+    /* Medium (780px) */
+
+@media screen and (max-width: 780px) {    
+    
+    .banner {        
+        height: 9rem;
+    }
+    
+    .banner__text{
+        font-size: 2rem;        
+    }    
+}
+
+/* Small (500px) */
+@media screen and (max-width: 500px) {    
+    .banner {
+        width: calc(100% - 2rem);        
+        height: 6rem;
+    }
+
+    .banner__text{
+        font-size: 1.5rem;        
+    }    
+}
