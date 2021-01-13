@@ -1,0 +1,52 @@
+
+    <!-- CSS POSITIONING & TRANSFORMS -->
+
+    <style>        
+
+        .tag{
+
+            /* These positioning elements are never for doing   grids and layouts */
+            /* useful for small tweaks to the UI */
+            /* useful for giving feedback to the user */
+
+            position: relative;
+            /* Setting up a box that gives other elements a coordinate system to position themselves in */
+
+/* When you position something, you gain access to the top, left, right and bottom attributes, which lets you position in relation to where it sits in the current flow of the document (can make a button shift a bit when clicked etc.) */
+/* When you position something you also gain access to the z-axis */
+
+            z-index: -1;
+            /* pushes it behind */
+
+            position: fixed;
+            /* fixed relative to the screen */
+            /* When position is fixed you need to set a width element or it will collapse */
+            /* removed from document flow, so won't use parent elements/css etc. (will need to set background-color again separately) */
+
+            position: absolute;
+            /* positioned in relation to the nearest
+            element above it that has relative positioning (the body is by default the first one with relative positioning) */
+        }
+
+    </style>
+
+    <!-- Transforms -->
+
+    <!-- Transforms can operate at a sub-pixel level -->
+    <!-- moves between pixels and also the space between pixels (unlike positioning) -->
+    <!-- accesses GPU acceleration -->
+
+    <style>
+        .tag{
+            transition: transform 3s linear;
+            transform: scale(2); 
+            /* | (2, 2) x -> y | 2 x and y etc. | */
+            transform: skewY(-10deg);
+            transform: skewX(-10deg);
+            transform: rotate(10deg);
+
+            /* minus values obviously do opposite side of the axis */
+            transform: translateX(10px);
+            transform: translateY(10px);            
+        }
+    </style>

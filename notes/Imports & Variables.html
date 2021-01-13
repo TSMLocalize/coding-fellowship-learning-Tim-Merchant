@@ -1,0 +1,63 @@
+<!-- css imports-->
+
+<!-- You need to split up and import CSS files -->
+<!-- Need to spread them out -->
+<!-- Need to avoid loads of links in your HTML header -->
+
+<!-- separation of concerns -->
+<!-- patterns folder - with all different css files present -->
+
+<style>
+    /* global imports at the top */
+    /* This should be the general styling for the body etc. */
+    @import 'global.css'; 
+    @import 'typography.css';
+
+    @font-face {
+
+    }
+
+    h1, h2, h3, h4, h5 {
+
+    }
+
+    /* This file's only going to be imported when   we shrink the screen down to this size */
+    @import 'patterns/nav--desktop.css' only screen and (min-width: 768px);
+    /* @media is best practice, really, because it's better to have them in the same file, (as in this case, in the nav file) */
+    /* This above example is useful for when, you just want a css file for when you're going to print something, for example */
+
+    /* Sass trumps this really */
+    /* Sass is one request */
+
+
+    /* VARIABLES */
+
+     @import 'variables.css';
+     /* These want to be at the top of the sheet to allow full dependency resolution in the cascading style sheet */
+
+    /* makes variables able to access everything in the site */
+     :root {
+        --dark-grey: #4A4A4A;
+        --light-grey: #B2B5BA;
+        --pink: #FF6A7C;
+        --off-white: #FFF0E9;
+        --turquoise: #41CADD;
+        --primary-font: Nunito, Helvetica, sans-serif;
+        /* Useful for ensuring complete design consistency throughout the site, for gaps etc. */
+        --pattern-spacing: 3rem;
+        
+     }
+
+    /* accessing these variables elsewhere */
+     .tag {
+        background-color: var(--turquoise);
+     }
+
+    /* ctrl + shift + L - highlights all instances at the same time in VSCode */
+
+/* 
+
+
+
+
+
