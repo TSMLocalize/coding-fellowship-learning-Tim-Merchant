@@ -1,7 +1,7 @@
 @import '/css/global.css';
 @import '/css/variables.css';
 
-.footer{
+.footer{    
     width: 100%;
     display: flex;
     justify-content: center;
