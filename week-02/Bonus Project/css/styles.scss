@@ -1,0 +1,54 @@
+$robotFont: 'Roboto', sans-serif;
+$golden-rod: #eef4c3;
+$khaki: #f8dc6e;
+$coral: #f3825e;
+$sienna: #9f3c56;
+$darkSlateGray: #523159;
+$darkSeaGreen: #92a093;
+$darkKhaki: #b09b51;
+$indianRed: #e07557;
+$darkSlateGray-Light: #362344;
+$bisque: #fcdacf;
+
+*{
+    margin: 0;    
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: $darkSeaGreen;
+}
+
+.container {
+    width: 80%;    
+}
+
+.segment__nav {
+    background: $golden-rod;
+    @extend %segment;
+}
+.segment__one {
+    background: $khaki;
+    @extend %segment;
+}
+.segment__two {
+    background: coral;
+    @extend %segment;
+}
+.segment__three {
+    background: $sienna;
+    @extend %segment;
+}
+.segment__bottom {
+    background: $darkSlateGray;
+    @extend %segment;
+}
+
+%segment {
+    height: 10rem;
+}
