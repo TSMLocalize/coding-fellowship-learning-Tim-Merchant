@@ -9,9 +9,12 @@ $darkKhaki: #b09b51;
 $indianRed: #e07557;
 $darkSlateGray-Light: #362344;
 $bisque: #fcdacf;
+$fullHeight: 15rem;
+$contractedHeight: 5rem;
 
 *{
     margin: 0;    
+    box-sizing: border-box;
 }
 
 main{
@@ -20,35 +23,80 @@ main{
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
     background: $darkSeaGreen;
 }
 
 .container {
-    width: 80%;    
+    padding: 1rem;
+    width: 95%;        
 }
 
 .segment__nav {
+    width: 100%;
     background: $golden-rod;
-    @extend %segment;
+    color: $darkKhaki;    
+    border-radius: 1rem 1rem 0 0;
+    height: 12rem;    
+    font-family: $robotFont;
+    font-size: 2rem;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
 }
+
+.segment__nav-content{
+    display: flex;     
+    align-items: flex-end; 
+    padding: 2rem 0rem 0rem 3rem;  
+}
+
+.segment__nav-burger{
+    margin-right: 1.5rem;
+}
+
+.segment__nav-menu-link{
+    text-decoration: none;
+    color: $darkKhaki;
+}
+
+.segment__nav-items{
+    padding: 0rem 0rem 2rem 3rem; 
+}
+
 .segment__one {
     background: $khaki;
+    color: $coral;
+    height: $fullHeight;
     @extend %segment;
 }
 .segment__two {
     background: coral;
+    color: $sienna;
+    height: $fullHeight;
     @extend %segment;
 }
 .segment__three {
     background: $sienna;
+    color: $darkSlateGray;
+    height: $fullHeight;
     @extend %segment;
 }
 .segment__bottom {
     background: $darkSlateGray;
+    color: $darkSlateGray-Light;
+    border-radius: 0 0 1rem 1rem;
+    height: $fullHeight;
     @extend %segment;
 }
 
 %segment {
-    height: 10rem;
+    font-family: $robotFont;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;       
+    #example1 {
+        box-shadow: 5px 10px;
+    }
 }
