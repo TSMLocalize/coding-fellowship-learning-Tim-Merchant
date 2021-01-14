@@ -37,7 +37,7 @@
 }
 
 
-.burgerList {  
+/* .burgerList {  
     height: 10rem;
     position: absolute;
     display: flex;
@@ -64,10 +64,10 @@
 
 .animateBurgerUp{
     animation: animateBurgerUp 0.5s forwards linear;
-}
+} */
 
 
-@keyframes animateBurgerDown{
+/* @keyframes animateBurgerDown{
     0% {
         padding: 0rem;
         height: 0rem;        
@@ -93,7 +93,7 @@
     #burgerList {
         display: none;
     }
-}
+} */
 
 /* Medium (780px) */
 
