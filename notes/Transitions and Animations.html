@@ -1,0 +1,57 @@
+<!-- Transitions and animations -->
+
+<!-- WebGL and Javascript Framework -->
+<!-- Storytelling -->
+<!-- FreeJS game making in javascript-->
+
+<!-- SVGs get rendered and painted inside the web page - so much faster -->
+
+<style>
+
+    .hero{
+        /* shorthand */        
+        animation: animateHero 20s forwards ease-in-out,
+        slideIn 2s forwards ease-in;
+        /* you can stack animations like this^ */
+        
+        animation-name: animateHero;
+        animation-duration: 20s;
+        
+        /* once animation is finished it will stay at the final state */
+        animation-fill-mode: forwards;        
+
+        animation-delay: ;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes animateHero {
+        /* describes final state */
+        100% {            
+            transform: translateX(0);
+        }
+    }
+
+    .tag{
+        position: relative;
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        bottom: -.25rem;
+        width: 100%;
+        background-color: red;
+        height: 2px;        
+        transform-origin: left;
+
+        /* Check what this means */
+        transition: transform .5s linear .5s;
+    }
+
+    .tag:hover::after{
+        visibility: visible;
+        /* after tags always need this content attribute */
+        content: '';
+        transform: scale(0);
+        visibility: hidden;        
+    }
+
+</style>

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=font1|font2|etc" type="text/css">
     <link rel="stylesheet" href="./css/main.css" type="text/css">
     <link rel="stylesheet" href="./css/banner.css" type="text/css">
     <link rel="stylesheet" href="./css/nav.css" type="text/css">
@@ -17,46 +16,51 @@
 </head>
 
 <body>
-    <nav class="container">
-        <article class="nav">
-            <img src="/assets/icons/Ignis.svg" alt="Ignis logo" class="nav__logo">
-            <section class="nav__links">
-                <a href="#" class="nav__link">HOME</a>
-                <a href="#" class="nav__link">BLOG</a>
-                <a href="#" class="nav__link">CONTACT</a>
-                <a href="#"><img class="nav__icon" src="./assets/icons/Search.svg" alt="magnifying glass"></a>
-                <a href="#"><img class="nav__expand" src="/assets/icons/bars 1.svg" alt="expand bars"></a>                
-            </section>
-        </article>
-    </nav>
-    <main class="container">
-        <article class="home">
-            <header class="hero">
-                <div class="hero__text hero__text--white">My name is Jo<span class="hero__text--red">.</span></div>
-                <div class="hero__text hero__text--white">I'm a <span class="hero__text--blue">photographer</span></div>
-            </header>
-            <section class="home__gallery">
-                <img class="home__image--large" src="/assets/images/penguin.jpg" alt="picture of penguin">
-                <img class="home__image--small" src="/assets/images/jellies.jpg" alt="picture of jellyfish">
-                <img class="home__image--large" src="/assets/images/zebra.jpg" alt="picture of zebra">
-                <img class="home__image--large" src="/assets/images/bird.jpg" alt="picture of bird">
-                <img class="home__image--small" src="/assets/images/snake.jpg" alt="picture of snake">
-                <img class="home__image--large" src="/assets/images/elephants.jpg" alt="picture of elephants">
-                <img class="home__image--small" src="/assets/images/water-birds.jpg" alt="picture of water birds">
-                <img class="home__image--small" src="/assets/images/turtle.jpg" alt="picture of turtle">
-            </section>
+    <header class="nav">
+        <img src="/assets/icons/Ignis.svg" alt="Ignis logo" class="nav__logo">
+        <nav class="nav__links">
+            <a href="#" class="nav__link">HOME</a>
+            <a href="#" class="nav__link">BLOG</a>
+            <a href="#" class="nav__link">CONTACT</a>
+            <a href="#"><img class="nav__icon" src="./assets/icons/Search.svg" alt="magnifying glass"></a>
+            <a href="#"><img id="burgerBtn" class="nav__expand" src="/assets/icons/bars_1.svg" alt="expand bars"></a>
+            <ul id="burgerList" class="burgerList active">
+                <a class="burgerLink" href="#">HOME</a>
+                <a class="burgerLink" href="#">BLOG</a>
+                <a class="burgerLink" href="#">CONTACT</a>
+                <a class="burgerLink" href="#">SEARCH</a>
+            </ul>
+        </nav>
+    </header>
+    <main class="home">
+        <header class="hero">
+            <img class="hero__image" src="/assets/images/hero_1.jpg" alt="Jo the Photographer">
+            <div aria-label="banner text" class="hero__text">
+                <p class="hero__text--white">My name is Jo<span class="hero__text--red">.</span></p>
+                <p class="hero__text--white">I'm a <span class="hero__text--blue">photographer</span></p>
+            </div>
+        </header>
+        <article class="home__gallery">
+            <img class="home__image--large" src="/assets/images/penguin.jpg" alt="penguin">
+            <img class="home__image--small" src="/assets/images/jellies.jpg" alt="jellyfish">
+            <img class="home__image--large" src="/assets/images/zebra.jpg" alt="zebra">
+            <img class="home__image--large" src="/assets/images/bird.jpg" alt="bird">
+            <img class="home__image--small" src="/assets/images/snake.jpg" alt="snake">
+            <img class="home__image--large" src="/assets/images/elephants.jpg" alt="elephants">
+            <img class="home__image--small" src="/assets/images/water-birds.jpg" alt="water birds">
+            <img class="home__image--small" src="/assets/images/turtle.jpg" alt="turtle">
         </article>
     </main>
-    <footer class="container">
-        <article class="footer">
-            <section class="footer__links">
-                <a href="#" class="footer__link-icon"><img src="/assets/icons/twitter 1.svg" alt="twitter icon"></a>
-                <a href="#" class="footer__link-icon"><img src="/assets/icons/instagram 1.svg" alt="instagram icon"></a>
-                <a href="#" class="footer__link-icon"><img src="/assets/icons/facebook-f 1.svg" alt="facebook icon"></a>
-                <a href="#" class="footer__link-icon"><img src="/assets/icons/youtube 1.svg" alt="youtube icon"></a>
-            </section>
-        </article>
+    <footer class="footer">
+        <nav aria-label="footer links" class="footer__links">
+            <a href="#" class="footer__link-icon"><img src="/assets/icons/twitter_1.svg" alt="twitter icon"></a>
+            <a href="#" class="footer__link-icon"><img src="/assets/icons/instagram_1.svg" alt="instagram icon"></a>
+            <a href="#" class="footer__link-icon"><img src="/assets/icons/facebook-f_1.svg" alt="facebook icon"></a>
+            <a href="#" class="footer__link-icon"><img src="/assets/icons/youtube_1.svg" alt="youtube icon"></a>
+        </nav>
     </footer>
+
+    <script src="/script.js"></script>
 </body>
 
 </html>

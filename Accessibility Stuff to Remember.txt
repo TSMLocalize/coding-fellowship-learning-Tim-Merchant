@@ -1,0 +1,24 @@
+use p tags for text
+use images, not background images
+alt tag = just needs 'dog' not 'picture of dog'
+ES Lint rules?
+
+If it goes somewhere, use an <a>
+If it actions something on the page, just a <button>
+
+What is SEO?
+
+Use Proper Input type.
+
+If you were to strip grid/flex off the page, the content should still be readable.
+
+USE CLEAN HTML - use verifier
+
+Cloudinary? upload image and get alt tags back
+
+ARIA dash rolls (use ARIA roles as selectors in CSS?)
+
+
+WAVE -> Lighthouse
+
+Multiple navigation elements on one page can be differentiated with ARIA labels.
