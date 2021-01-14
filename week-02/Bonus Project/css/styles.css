@@ -1,5 +1,10 @@
 @import '/css/variables.css';
 
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url(/assets/fonts/Roboto-Regular.ttf) format('woff2');
+  }
+
 /* Nav Card */
 
 .container {
@@ -89,7 +94,7 @@
     font-family: var(--pacifico);
 }        
 
-/*  */
+/* New Project */
 
 *{
     margin: 0;
@@ -104,9 +109,10 @@ main {
     align-items: center;
 }
 
-.container{        
+.container{       
+    font-family: var(--Roboto); 
     margin: 1rem;
-    width: 70%;    
+    width: 70%;        
     border-radius: 15px;        
     display: flex;    
     flex-flow: column nowrap;
@@ -125,10 +131,37 @@ main {
     box-shadow: inset 0px 7px 15px -3px rgba(50, 50, 50, 0.40);
 }
 
-.segment__head{
+.segment__nav{
+    display: flex;
+    flex-flow: column;    
+    align-items: flex-start;
+    justify-content: space-between;    
     color: var(--DarkKhaki);
     background-color: var(--Goldenrod);
     border-radius: 15px 15px 0px 0px;
+    box-shadow: none;
+}
+
+
+.segment__nav-content{    
+    display: flex;
+    flex-direction: row;    
+    align-items: center;        
+    margin: 3rem 0 0 3rem;
+}
+
+.segment__nav-items{    
+    margin: 0 0 2rem 3rem;
+}
+
+.segment__nav-burger{
+    fill: var(--DarkKhaki);
+    margin-right: 2rem;
+}
+
+.segment__nav-menu-link{
+    text-decoration: none;
+    color: var(--DarkKhaki);
 }
 
 .segment__one{
