@@ -1,0 +1,7 @@
+Things to do:
+
+Make an anki deck for emmet
+
+-- 
+
+Check Gulp

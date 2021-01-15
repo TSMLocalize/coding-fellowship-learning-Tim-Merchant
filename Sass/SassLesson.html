@@ -1,0 +1,160 @@
+<!-- Sass Syntactically Awesome Style Sheets -->
+
+<!-- 
+    A preprocessor for CSS.
+    Gives us extra syntax to allow us to write less CSS.
+    Have the Sass engine process it, and write CSS.
+
+    Lunar Home Site is written in native CSS to be super lightweight and not have any CSS that isn't being used.
+
+    In CodePen you can go to Settings, CSS and choose SCSS preprocessor.
+
+    PostCSS is another preprocessor, can be combined with SASS.
+
+ -->
+
+ <!-- VARIABLES -->
+ <!-- 
+
+    ===
+
+     $gridCols: 7;
+
+     grid-template-columns: repeat($gridCols, 1fr);
+
+     Because Sass is a preprocessor, they're replaced in the actual style sheet with their actual values. Hence there's no browser compatibility issues.
+
+    ===
+
+    $grid: (
+        Cols: 7,
+        ColSize: 1fr
+    );
+
+    grid-template-columns: repeat(map-get($grid, cols), map-get($grid, colSize));
+
+    Maps are a good way of structuring related data.
+
+    
+    ===
+
+    $breakpoints: 468px, 768px, 992px, 1200px;
+    
+    Creates an array ^ 
+
+    max-width: nth($breakpoints, 2);
+    This takes the second entry of $breakpoints;
+
+  -->
+
+  <!-- NESTING & PARENT SELECTOR OPERATOR -->
+  <!-- 
+
+      You can nest CSS stuff
+
+      .grid {
+          .grid__cell {
+
+          }
+      }
+
+      This is the same as:
+
+      .grid .grid__cell {
+
+      }
+
+      .grid {
+          &__cell {
+            &__text {
+
+            }
+          }
+        }
+
+      The & stands in for the parent class name here. Great for typing out BEM.
+
+      .grid {
+          &__cell {
+              &:nth-of-type(1){
+
+              }
+          }
+        }
+   -->
+
+   <!-- MIXIN -->
+    <!-- 
+
+        @mixin gridArea($colStart, $colEnd, $rowStart, $rowEnd){
+            grid-column: #{$colStart} / #{$colEnd};
+            grid-row: #{$rowStart} / #{$rowEnd};
+        }
+        
+        These variables are scoped only to the gridArea mixin.
+        #{} interpolation, tells Sass to just insert something, not perform any Sass functionality on it.
+        In the above example, it would do maths division if we didn't do this.
+        
+        .grid {
+          &__cell {
+              &:nth-of-type(1){
+                  @include gridArea(2, 3, 1, 2);
+              }
+          }
+        }
+
+        Another Example
+
+        @mixin cellOverlay($leftPos: 0, $backgroundColor: Orange){
+            $leftPos = 1rem;
+            $backgroundColor = Orange;
+        }
+
+        .grid {
+          &__cell {
+              &:nth-of-type(1){
+                  @include cellOverlay();
+              }
+          }
+        }
+
+        Default values for arguments can be set as above example, where no arguments are passed, so it is just given 1rem and Orange.
+
+        Another Example
+
+        @mixin cellOverlay($leftOrRight: 'left', $width: 100%){
+            #{$leftOrRight} = 0;
+            width = $width;
+        }
+
+        .grid {
+          &__cell {
+              &:nth-of-type(1){
+                  @include cellOverlay('right', 25%);
+              }
+          }
+        }
+
+        ^ Would set the right to have a width of 25%.
+
+    -->
+
+    <!-- Partials -->
+    <!-- 
+        The reason why we separate components out is because of sass.
+        Sass imports are all done before the website loads, unlike css imports which make separate network requests for each.
+     -->
+
+     <!-- Functions -->
+     <!-- 
+         You can use functions, to even make like, pixels to Rem functions.
+      -->
+
+      <!-- Conditionals -->
+      <!-- 
+          
+          @if ($color) {
+              color: $color;
+          }
+
+       -->

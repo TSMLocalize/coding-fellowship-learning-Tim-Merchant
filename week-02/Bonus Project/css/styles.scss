@@ -1,4 +1,11 @@
+*{
+    margin: 0;    
+    box-sizing: border-box;
+}
+
+// Fonts
 $robotFont: 'Roboto', sans-serif;
+// Colors
 $golden-rod: #eef4c3;
 $khaki: #f8dc6e;
 $coral: #f3825e;
@@ -9,13 +16,76 @@ $darkKhaki: #b09b51;
 $indianRed: #e07557;
 $darkSlateGray-Light: #362344;
 $bisque: #fcdacf;
+// Sizes
+$extendHeight: 30rem;
 $fullHeight: 15rem;
 $contractedHeight: 5rem;
 
-*{
-    margin: 0;    
-    box-sizing: border-box;
+
+@mixin animate($start, $end){    
+    
+    @if ($start == $fullHeight && $end == $extendHeight){
+        animation: extend 0.5s forwards linear;    
+    } 
+    @else if($start == $contractedHeight && $end == $extendHeight) {
+        animation: extendFromContract 0.5s forwards linear;    
+    } 
+    @else if($start == $fullHeight && $end == $contractedHeight) {
+        animation: contract 0.5s forwards linear;    
+    }
+    @else if($start == $extendHeight && $end == $contractedHeight) {
+        animation: contractFromExtend 0.5s forwards linear;    
+    }
 }
+
+.extend{
+    animation: extend 0.5s forwards linear;    
+}
+.extendFromContract{
+    animation: extendFromContract 0.5s forwards linear;    
+}
+.contract{
+    animation: contract 0.5s forwards linear;    
+}
+.contractFromExtend{
+    animation: contractFromExtend 0.5s forwards linear;    
+}
+
+@keyframes extend{
+    0%{
+        height: $fullHeight;
+    }
+    100%{
+        height: $extendHeight;
+    }
+}
+
+@keyframes extendFromContract{
+    0%{
+        height: $contractedHeight;
+    }
+    100%{
+        height: $extendHeight;
+    }
+}
+@keyframes contract{
+    0%{
+        height: $fullHeight;
+    }
+    100%{
+        height: $contractedHeight;
+    }
+}
+
+@keyframes contractFromExtend{
+    0%{
+        height: $extendHeight;
+    }
+    100%{
+        height: $contractedHeight;
+    }
+}
+
 
 main{
     display: flex;
@@ -42,26 +112,28 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: space-between;    
+
+    &-content{
+        display: flex;     
+        align-items: flex-end; 
+        padding: 2rem 0rem 0rem 3rem;  
+    }
+
+    &-burger{
+        margin-right: 1.5rem;
+    }
+    
+    &-menu-link{
+        text-decoration: none;
+        color: $darkKhaki;
+    }
+    
+    &-items{
+        padding: 0rem 0rem 2rem 3rem; 
+    }
 }
 
-.segment__nav-content{
-    display: flex;     
-    align-items: flex-end; 
-    padding: 2rem 0rem 0rem 3rem;  
-}
 
-.segment__nav-burger{
-    margin-right: 1.5rem;
-}
-
-.segment__nav-menu-link{
-    text-decoration: none;
-    color: $darkKhaki;
-}
-
-.segment__nav-items{
-    padding: 0rem 0rem 2rem 3rem; 
-}
 
 .segment__one {
     background: $khaki;
