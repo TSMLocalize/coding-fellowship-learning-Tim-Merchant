@@ -1,0 +1,366 @@
+<!-- 
+    node 
+
+    Sarts REPL mode (Read, Evaluate, Print, Loop)
+    ^C twice to quit REPL mode
+
+    node script.js 
+    
+    run in javascript mode
+ -->
+
+<!-- 
+     +"12" + 12 // 24
+     ^ casting a string value into a number value, else:
+     "12" + 12 //1212
+     JS overloads to string after the first string it comes across.
+     *
+     It is often necessary to cast a string to a number when getting values from the
+     browser (e.g. an input’s value will come back as a string).
+
+     let greeting = `Hello ${name}, how are you?`;
+     ^ Interpolation of variable into string.
+
+     ! (Not) is a Unary operator, that changes false to true and true to false.
+
+     !!"false"; // true
+     casts the string as a boolean and flips it to true
+  -->
+
+<!-- 
+
+      Falsey values (ones that type cast to false) in JavaScript are:
+    • false
+    • 0
+    • "" (the empty string)
+    • null
+    • undefined
+    • NaN
+      Everything else is truthy (i.e. it type casts to true).
+   
+    -->
+
+<!--
+
+        Ternary Operator
+
+        let current = 3;
+        // set the value of next, dependent on the value of current
+        let next = current > 5 ? 0 : current + 1; // next is set to 4
+
+     -->
+
+<!-- 
+
+        let username = "admin";
+        
+        switch (username) {
+            case "admin": console.log("Authorized"); break;
+            case "Admin": console.log("Authorized"); break;
+            case "Jeff": console.log("Back door! Authorized"); break;
+            default: console.log("Unauthorized");
+        }
+
+      -->
+
+<!-- 
+            It is traditional to use i as the counter variable - one of the few places it’s good
+            practice to use a single letter variable name. If you need a loop inside a loop then
+            just keep going down the alphabet (j, k, …).
+       -->
+
+<!-- 
+            An infinite loop will keep running until you kill the process that’s running it. If
+            you’re running code in node and you think you’ve got an infinite loop then press
+            Ctrl+C, which will kill the node process.
+        -->
+
+<!-- a function is a value in JavaScript2, so, as with any other value, we can assign
+            functions to variables: 
+        
+            let add = function (a, b) {
+                return a + b;
+            };
+
+            2This is not true in a lot of languages*
+        -->
+
+<!-- 
+            // a and b are the function parameters
+            // the variable names we use inside the function body
+            let add = function (a, b) {
+            return a + b;
+            };
+            // 1 and 2 are the arguments
+            // the values we call the function with
+            add(1, 2);
+         -->
+
+<!-- 
+            It’s worth noting that fat arrow syntax is not identical to a traditional function
+            declaration: it inherits its parent’s context.
+         -->
+
+<!-- 
+             Unless you have a good reason not to, you should use fat arrow syntax.
+          -->
+
+<!-- 
+              Function parameters are always scoped to the function they belong to. Variables
+              created with var are also scoped to the containing function, not block scoped like
+              let and const.         
+           -->
+
+<!-- 
+               Finding a value
+
+                let letters = ["a", "b", "c", "d"];
+                console.log(letters.indexOf("b")); // 1
+                console.log(letters.indexOf("d")); // 3
+                console.log(letters.indexOf("e")); // -1
+                
+                We get back the index of the first match. If not match is found you get back -1.
+                (It doesn’t return false because it’s a good idea for functions to always return the same type of value)
+            
+            -->
+
+<!-- Does it include
+            
+                let letters = ["a", "b", "c", "d"];
+
+                console.log(letters.includes("b")); // true
+                console.log(letters.includes("d")); // true
+                console.log(letters.includes("e")); // false
+
+            -->
+
+<!-- 
+                Get part of an array
+
+                let numbers = [3, 4, 5, 6, 7, 8, 9];
+                // first argument is index to start on
+                // second argument is index to finish before
+                let middle = numbers.slice(2, 5); // [5, 6, 7]
+
+             -->
+
+<!-- 
+                Remove part of an array
+
+                 let numbers = [3, 4, 5, 6, 7, 8, 9];
+                // first argument is index to start on
+                // second argument is index to finish before
+                let middle = numbers.splice(2, 3);
+                console.log(middle); // [5, 6, 7]
+                // changes the original array
+                console.log(numbers); // [3, 4, 8, 9]
+              -->
+
+<!-- SPREAD OPERATOR -->
+
+<!-- 
+                    ... stands in for values in the array so lets you access them without concatenating a separate array etc.
+
+                    let numbers = [3, 4, 5, 6, 7, 8, 9];
+                    // ...numbers represents all the values in the array
+                    // but as separate values
+                    let copied = [...numbers]; // [3, 4, 5, 6, 7, 8, 9]
+                    // without the spread operator we'd get an array inside an array
+                    let oops = [numbers]; // [[3, 4, 5, 6, 7, 8, 9]]
+
+                    let odd = [3, 5, 7, 9];
+                    let even = [4, 6, 8];
+                    let mergedOddEven = [...odd, ...even]; // [3, 5, 7, 9, 4, 6, 8]
+                    let mergedEvenOdd = [...even, ...odd]; // [4, 6, 8, 3, 5, 7, 9]
+
+                    Below makes a copy of the passed in array so that pop won't alter the passed in array.
+
+                    let last = arr => [...arr].pop();
+                    let values = [1, 2, 3]
+                    last(values); // 3 - values still [1, 2, 3]
+               -->
+
+<!-- A function that returns true or false for a given value is sometimes called a predicate. -->
+
+<!-- 
+                   let words = ["fish", "cow", "wombat"];
+                    // each item in the array is passed into the function
+                    // returns the first value in the array for which
+                    // the given function returns true
+                    let result = words.find(word => word.length === 3); // "cow"
+                -->
+
+<!--  FILTER ARRAY
+
+                    let numbers = [1, 2, 3, 4, 5, 6];
+                    // iterates over an array passing each value into the supplied function
+                    // removes any items that the function returns false for
+                    let evenNumbers = numbers.filter(val => val % 2 === 0);
+                    console.log(evenNumbers); // [2, 4, 6]
+
+                    Iterates over an array and returns a new array containing the same number or
+                    fewer items.
+                    If the given function takes two arguments the second one will be the current index.
+
+                    Some & Every
+                    There are also some and every methods which work like filter. some returns
+                    true if any of the test functions return true. every returns true if all of the test
+                    functions return true.
+
+                 -->
+
+<!-- REDUCE ARRAY
+                
+                    let numbers = [1, 2, 3, 4, 5, 6];
+                    // iterates over the array, passing in previous return value and new
+                    // value - the final value is the return value from the final iteration
+                    // the value of total the first time it runs is 0, reduce's second
+                    ,→ argument
+                    let sum = numbers.reduce((total, val) => total + val, 0);
+                    console.log(sum); // 21
+
+                    If you do not pass in an initial value as the second argument to reduce, JavaScript
+                    will automatically use the first value in the array. It will also skip the first item in
+                    the array when iterating, as if doing a for loop that starts at index 1.
+
+                    ANOTHER EXAMPLE:
+
+                    const array1 = [1, 2, 3, 4];
+                    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+                    // 1 + 2 + 3 + 4
+                    console.log(array1.reduce(reducer));
+                    // expected output: 10
+
+                    // 5 + 1 + 2 + 3 + 4
+                    console.log(array1.reduce(reducer, 5));
+                    // expected output: 15
+                
+                -->
+
+<!--
+
+                    10.6 Which Iterator Method?
+                    • Do you have an array? If not, then you can’t use an array iterator method!3
+                    • Do you need to filter out some values? Use filter
+                    • Do you need to transform each value? Use map
+                    • Do you need to turn the array into some other value? Use reduce
+                    • Do you need to turn the array into another array, but which isn’t just filtered
+                    or mapped? Use reduce
+                    • Do you just need to run some code, but you’re not interested in getting back
+                    a result? Use forEach
+                    You shouldn’t ever need to use a for loop for working with arrays.
+
+                 -->
+
+<!-- 
+
+                     let now = new Date(); // a date object representing now
+                    // a date representing 5:08 am on 24th August 2018
+                    let birthdate = new Date("2018-08-24T05:08:00");
+                    birthdate.getFullYear(); // 2018
+                    birthdate.getDate(); // 24
+                    birthdate.getDay(); // 5 (0 - 6, 0 is Sunday and 6 is Saturday)
+                    birthdate.getMonth(); // 7 (0 - 11, 0 = January - c'est stupide!)
+                    birthdate.getTime(); // 1535083680000
+                  -->
+
+<!-- 
+                      // MATH Useful properties
+
+                    Math.PI; // 3.141592653589793
+                    Math.E; // 2.718281828459045
+                    // Rounding
+                    Math.floor(3.45); // 3
+                    Math.ceil(3.45); // 4
+                    Math.round(3.45); // 3
+                    // Exponents
+                    Math.sqrt(4); // 2
+                    Math.pow(2, 3); // 8
+                    // Other mathematical functions
+                    Math.log(6); // 1.791759469228055
+                    Math.cos(45); // 0.5253219888177297
+
+                   -->
+
+<!-- SPREAD operator with Objects -->
+<!-- 
+                       let person = {
+                        name: "Sandy",
+                        age: 54,
+                        };
+                        // creates a copy of person
+                        let copied = { ...person };
+
+                        change a property while copying:
+
+                        let person = {
+                        name: "Sandy",
+                        age: 54,
+                        };
+                        // creates a copy of person and changes the age property
+                        let copied = { ...person, age: 55 };
+
+
+                        MERGE two objects together:
+
+                        let personProps = {
+                        name: "Sandy",
+                        age: 54,
+                        };
+                        let otherPersonProps = {
+                        name: "Noel",
+                        favouriteColour: "orange",
+                        };
+                        // merges two objects
+                        // the second object overwrites any matching properties of the first
+                        let merged = { ...personProps, ...otherPersonProps };
+                        // gives us: { name: "Noel", age: 54, favouriteColour: "orange"}
+                    -->
+
+<!-- COMPLEX data handling with arrays of objects -->
+<script>
+
+    let people = [{
+        id: 345,
+        name: "Ta-Nehisi",
+        age: 43,
+    }, {
+        id: 789,
+        name: "Reni",
+        age: 29,
+    }];
+    // find all the people age 30 or over
+    let over30s = people.filter(person => person.age >= 30);
+    // return an array of just the names
+    let names = people.map(person => person.name);
+    // return the oldest person
+    let oldest = people.reduce((oldest, person) => (
+        person.age > oldest.age ? person : oldest
+    ), people[0]);
+</script>
+
+<!-- It's good practice to write getter and setter methods for reading and writing properties when using classes: -->
+<script>
+    class Book {
+        constructor(title, author) {
+            this.title = title;
+            this.author = author;
+            this.price = null;
+        }
+        setPrice(value) {
+            this.price = value;
+            return this;
+        }
+        getPrice() {
+            if (this.price === null) {
+                return "Unknown";
+            }
+            return "£" + this.price.toFixed(2);
+        }
+    }
+    let book = new Book("Lord of the Rrrings", "JRRRRR Tolkien");
+    console.log(book.getPrice()); // "Unknown"
+    book.setPrice(9.9);
+    console.log(book.getPrice()); // "£9.90"
+</script>

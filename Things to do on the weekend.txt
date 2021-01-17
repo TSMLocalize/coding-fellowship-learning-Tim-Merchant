@@ -1,6 +1,6 @@
 Things to do:
 
-Make an anki deck for emmet
+Make an anki deck for emmet, css selectors, sass commands and syntax, position relative / absolute, grid syntax, flex syntax, media query syntax, import font syntax
 
 -- 
 
