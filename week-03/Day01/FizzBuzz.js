@@ -1,11 +1,3 @@
-let modulo = 0;
-let output = '';
-let firstCondition = 0;
-let secondCondition = 0;
-let firstOutput = '';
-let secondOutput = '';
-
-
 for (let i = 1; i < 100; i++) {
     let output = "";
     if (i % 3 === 0) {
