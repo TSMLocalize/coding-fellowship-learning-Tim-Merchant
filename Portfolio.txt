@@ -1,0 +1,13 @@
+Who you are
+What your role is (frontend, backend)
+Tech you can do
+Education? (maybe if not relevant)
+Contact
+Linked to Github, other social media
+Download of your CV
+
+Should be a reflection of yourself
+
+Make it responsive
+Semantically good HTML
+Make it load properly
