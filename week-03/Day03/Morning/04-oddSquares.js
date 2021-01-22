@@ -1,9 +1,12 @@
+let square = x => x * x;
+let odd = x => x % 2 !== 0;
+
 let oddSquares = (values) => {
     let oddSquareArray = [];
 
     for (let i = 0; i < values.length; i++) {
-        if ((values[i] * values[i]) % 2 !== 0) {
-            oddSquareArray.push(values[i] * values[i]);
+        if (odd(square(values[i]))) {
+            oddSquareArray.push(square(values[i]));
         }
     }
 
