@@ -67,4 +67,6 @@ let factorial = n => {
     return n * factorial(n - 1);
 };
 
+let factorial = n => n === 1 ? 1 : n * factorial(n - 1);
+
 // Anything you can write with recursive functions you can write with a for loop
