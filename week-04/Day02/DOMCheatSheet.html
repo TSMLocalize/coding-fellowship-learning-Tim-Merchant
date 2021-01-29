@@ -1,0 +1,153 @@
+
+<script>
+
+    let container = document.getElementById("container");
+    // the height of the element (in pixels)
+    container.clientHeight;
+    // the width of the element (in pixels)
+    container.clientWidth;
+    // the height of the element, including borders (in pixels)
+    container.offsetHeight;
+    // the width of the element, including borders (in pixels)
+    container.offsetWidth;
+    // returns the position of the element relative to the page
+    container.getBoundingClientRect();
+    // the text inside the element
+    container.textContent;
+    // the inline style border colour
+    container.style.borderColor;
+
+    window.pageYOffset; // the current vertical scroll position
+    window.pageXOffset; // the current horizontal scroll position
+    // DOES THE SAME BUT DEPRECATED:
+    window.scrollY
+    window.scrollX
+
+    window.innerHeight; // the height of the viewport
+    window.innerWidth; // the width of the viewport
+    document.body.offsetHeight; // the height of the document
+    document.body.offsetWidth; // the width of the document
+
+    container.style.border = "1px solid red";
+    container.style.position = "absolute";
+    // move element around the page
+    container.style.transform = "translateX(20px)";
+    container.style.transform = "translateY(20px)";
+    container.style.transform = "translate(20px, 20px)"; // (X, Y)
+    // notice we have to write marginTop, not margin-top
+    // due to property naming rules
+    container.style.marginTop = "20px";
+
+    // make sure you include the units (px in this case)
+    container.style.height = "200px";
+    container.style.width = "200px";
+
+    let title = document.getElementById("title");
+    title.textContent = "New Title"; // replaces text of #title
+
+</script>
+<input id="age" name="age" value="20" />
+<script>
+    let input = document.getElementById("age");
+    input.getAttribute("name"); // returns "age"
+    input.getAttribute("value"); // returns "20" (as a string)
+    input.setAttribute("value", "600"); // set the value attribute to "600"
+    input.removeAttribute("disabled"); // remove the disabled attribute
+
+
+    // Can be stored in variables to use later
+    let height = container.clientHeight;
+    // add 300 pixels to the height of the container
+    container.style.height = (height + 300) + "px";
+</script>
+
+<!-- Data Attributes -->
+<ul id="books">
+    <li data-id="12" data-author="Marijn Haverbeke">
+        Eloquent JavaScript
+    </li>
+    <li data-id="35" data-author="Douglas Crockford">
+        JavaScript: The Good Parts
+    </li>
+    <li data-id="59" data-author="David Flanagan">
+        JavaScript: The Definitive Guide
+    </li>
+</ul>
+
+<!-- We could then access this using the dataset property: -->
+
+<script>
+    let first = document.getElementById("books").firstElementChild;
+    if (first) {
+        console.log(first.dataset.id);
+        console.log(first.dataset.author);
+    }
+</script>
+
+
+<!-- CREATION -->
+
+<script>
+    // create a new <p> element and store it in a variable
+    let p = document.createElement("p");
+    // set the text inside the <p> to "A paragraph"
+    p.textContent = "A paragraph";
+
+    // select an item from the DOM
+    let container = document.getElementById("container");
+    // append the new <p> to the container element
+    // this adds it to the DOM
+    container.append(p);
+
+    el.prepend(otherEl)
+    // : adds otherEl as the first element of el
+    el.append(otherEl)
+    // : adds otherEl as the last element of el
+    el.before(otherEl)
+    // : adds otherEl before el
+    el.after(otherEl)
+        // : adds otherEl after el
+
+        // DEPRECATED:
+        .appendChild()
+        .insertBefore()
+        .insertAdjacentElement()
+
+    // create a new element
+    let p = document.createElement("p");
+    p.textContent = "Hello, world";
+    // select an existing element
+    let container = document.getElementById("container");
+    // puts the paragraph inside the container as the last element
+    // moves it rather than copying it
+    container.append(p);
+
+    // find the element with id mobile-nav
+    let mobileNav = document.getElementById("mobile-nav");
+    // remove the element from the page
+    mobileNav.remove();
+    // we can reinsert the item later
+    document.body.prepend(mobileNav);
+
+</script>
+
+<!-- Document Fragments -->
+
+<script>
+    // the list is already on the page, so if we append
+    // to it we will cause a redraw
+    let list = document.getElementById("list");
+    let animals = ["kangaroo", "wombat", "platypus", "koala"];
+    let fragment = document.createDocumentFragment();
+    animals.forEach(animal => {
+        let el = document.createElement("li");
+        el.textContent = animal;
+        // append to the document fragment
+        // this isn't on the page, so won't cause a redraw
+        fragment.append(el);
+    });
+    // append the fragment once
+    // this appends all the items in one go
+    // so we only get one redraw instead of five
+    list.append(fragment);
+</script>

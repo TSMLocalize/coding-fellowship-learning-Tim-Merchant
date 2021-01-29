@@ -1,0 +1,176 @@
+<!-- // We don't want to use javascript in the browser
+// but this can be done: <script> console.log('hello world') </script>
+
+// <script src='./scripts/index.js'></script>
+// This (used to be) placed at the bottom of the body tag, because we need to have assigned all the HTML elements before running the script.
+// HOWEVER -----
+
+// DEFER & ASYNC
+
+// These days, place it in the head, but add a 'defer' attribute
+// <script defer src='/scripts/index.js'></script>
+// This forces all the HTML to be read before running the script
+// Technically: downloads script while parsing HTML, but only runs script after parsing HTML
+
+// <script async>
+// Still downloads while running HTML parsing, but then pauses HTML parsing to run script.
+
+
+// Scripts are loaded in order. -->
+<script defer src='/DebuggingDictionary.js'></script>
+<script defer src='/DebuggingDictionary2.js'></script>
+
+<!-- Scripts can reference variables from other scripts -->
+
+<script>
+    (() => {
+
+    })();
+</script>
+<!-- IIFE calls function immediately and protects scope -->
+<!-- This makes sure we don't get naming collisions -->
+<!-- Should just have one, and do all the code inside it -->
+
+
+<!-- THE DOM -->
+<!-- Document Object Model -->
+<!-- A Model is some kind of data structure that represents something else -->
+<!-- It models the HTML document -->
+<!-- Javascript interacts with HTML by using Objects -->
+
+<script>
+    document.title;
+    document.head;
+    document.body;
+
+    const nav = document.getElementById('nav');
+    
+</script>
+
+<!-- You should't style things in CSS with IDs -->
+<!-- Use IDs for javascript -->
+<!-- When parsing the HTML, anything with ID is stored somewhere JS can easily access it -->
+
+<script>
+    document.querySelector('#nav');
+    // would require a hashtag to fetch an ID
+    // querySelector vs getElementByID
+    // querySelector expects a valid CSS selector.
+    document.querySelector('.search-form');
+    // selects by class, must have the dot for class
+    document.querySelector('li:nth-child(2');
+    document.querySelector('nav > ul > li > a');
+</script>
+
+<!-- getelementById and querySelector only give the first element back -->
+<!-- QuerySelector not as efficient as getElementByID, as it has to search through the whole page to find what it's looking for. -->
+<!-- If you can use IDs, USE IDs! -->
+<!-- UNLESS you'd have them all over the place, and it wouldn't be efficient -->
+
+<script>
+    ((d) => {
+        
+        const nav = d.getElementById('nav');
+        nav.classList.add('test');
+        nav.classList.remove('align-items-center');
+        // these return 'true' or 'false' so no need to assign to a variable
+        nav.classList.toggle('flex-column');
+        
+        nav.classList.add('test', 'test2');
+        // add multiple classes at once
+
+    })(document);
+    // So this gives us a d variable to use as the document
+
+    // Best practice - most maintainable:
+    const nav = d.getElementById('nav');
+    nav.classList.add('test');
+    nav.classList.toggle('test');
+    // one lining stuff is too concise.
+    
+
+</script>
+
+<!-- You need to test as granularly as possible, do the smallest amount of work that you can and see if it works. -->
+
+
+<!-- AFTERNOON -->
+
+<script>
+    const buttons = document.querySelectorAll('button');
+    // returns a NodeList (like an array) of buttons.
+    // works similarly to an array, but is not fully featured.
+    // 0 indexed.
+
+    // We need to turn it into an array!
+    const buttonsArray = Array.from(buttons);
+    // turns the iterable nodeList into an array.
+
+    // NodeLists do actually have forEach
+    buttons.forEach(x => x + 1);
+    // HOWEVER, it's always best to turn it into an array, for the sake of usability.
+
+    const buttonsArray2 = [...buttons];
+    // use spread operator to copy an array like thing into an array;
+    // ^ quickly get the nodeList into a proper array.
+
+    const buttons = document.getElementsByTagName('button');
+    // This is tags only, no classes or ID.
+    // THIS DOESN'T RETURN A NODELIST, it returns an HTMLCollection, which is iterable like a NodeList. Either way TURN IT INTO AN ARRAY!
+
+    const buttonsArray = [...buttons];
+
+    const buttons = Array.from(d.getElementsByTagName('button'));
+    // Get an array in one line of code from the DOM.
+
+    const buttons = [...d.getElementByTagName('button')];
+    // THIS IS BEST PRACTICE for array from the DOM.
+
+    const darkText = document.getElementsByClassName('text-dark');
+    // returns an HTMLCollection
+
+    // With ID, we can't do multiple IDs at once.
+    document.querySelectorAll('#myID');
+    // Best way of getting all IDs.
+
+    [...document.queryselectorAll('p')].slice(2, 4);
+    // For selecting a selection
+
+    [...document.querySelectorAll('p')].filter((paragraph, i) => i % 2 === 0);
+    // Instantly select stuff using array methods immediately;
+
+    ".js__first-list"
+    // adding .js to a class shows someone working on it the class is only for js
+
+    // DOM traversal
+    ((d) => {
+        const thungumy = document.getElementsByClassName('thingumy');
+        const ul = thingumy.parentElement;
+        const anchor = thingumy.firstElementChild;
+        // Do not use 'firstChild' it's deprecated.
+        const anchor2 = thingumy.lastElementChild;
+        const listItems = ul.children;
+        const lastLI = thingumy.nextElementSibling;
+        const firstLI = thingumy.previousElementSibling;
+    })(document);
+    // ^ THIS IS A BAD IDEA, treat with caution.
+    // If anything about the mark-up changes, all the DOM relationships will be wrong.
+    const para = thingumy.parentElement.parentElement.parentElement;
+    // You can chanin them together.
+
+    const list = document.querySelectorAll('ul a');
+    // inefficient, as JS runs from right to left, finds all the anchor tags, then filters by ul. (if you have 1000s of anchors, inefficient);
+    
+    const list = document.querySelectorAll('ul');
+    const navAnchors = list.querySelectorAll('a');
+    // hence this is more efficient
+    list.getElementById('a');
+    // This wouldn't work, can only do it based on the document, not IDs
+    // IDs don't exist in the DOM, they exist in memory elsewhere
+    button.previousSibling 
+    // returns just #text, referring the whithe 
+
+
+
+
+</script>

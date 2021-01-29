@@ -1,0 +1,104 @@
+<!-- It's better to get by class in the DOM, only ever use tags when you know something is used sitewide -->
+
+
+<!-- Read Only properties: -->
+
+<!-- clientHeight clientWidth -->
+<!-- Ignores border and margin -->
+<!-- Returns in pixels only -->
+
+<!-- offsetWidth offsetHeight -->
+<!-- Does include margin but not border? [check this] -->
+
+<script>
+    info.getBoundingClientRect();
+    // Gives you back a DOM object.
+    // top measures from top of viewport to element.
+    // left right bottom too
+</script>
+
+<!-- It's goood practice to store stuff as variables when querying the DOM -->
+
+<script>
+    let infoHeight = d.getElementById("info").clientHeight;
+</script>
+
+<!-- Every time you query the DOM it has to go through everything and look for that item -->
+
+<script>
+    window.innerHeight
+    window.innerWidth
+    // Height and width of the viewport
+</script>
+
+<!-- Make a relationship between viewport and entire page: -->
+<script>
+    window.innerHeight
+    document.body.offsetHeight
+</script>
+
+<!-- The document itself is a property of the Window -->
+<!-- The Window is in the BOM Browser Object Model, then stuff in document are in DOM Document Object Model -->
+<!-- There is also the CSSOM CSS object model -->
+<!-- adding and removing classes is still the best way, really. -->
+<!-- All the CSS properties are held in the style property -->
+
+<script>
+    let card = document.querySelector('.card');
+    card.style.border = "1px solid blue";
+    // All hyphenated CSS properties are camel case
+    card.style.backgroundColor = "gold";
+
+    card.style.height = (infoHeight * 2) + "px";
+
+    // These styles create inline styling so it's always prioritised over other CSS stuff (check specificity)
+</script>
+
+<script>
+
+    ((d) => {
+        let card = d.querySelector(".card");
+
+        let moveCard = time => {
+            card.styles.transform = `translateX(${time / 100}px)`;
+            requestAnimationFrame(moveCard);
+        }
+        requestAnimationFrame(moveCard);
+    })(document)
+
+</script>
+
+<!-- TOGGLING CLASSES ON AND OFF is always more preferable than altering styles directly with the DOM and CSSOM -->
+
+<script>
+    h1.textContent = "blach";
+    body.textContent = "";
+    // removes all child elements with just the text inputted;
+</script>
+
+<script>
+    search.getAttribute('placeholder');
+    search.removeAttribute('placeholder');
+    search.setAttribute('placeholder', 123);
+    search.value
+    // VERY IMPORTANT, gives you back what the user has typed in.
+    search.focus();
+    // focuses on the form entry
+    search.blur();
+    // removes focus    
+</script>
+
+<!-- Datasets -->
+
+<div data-subspecies="Hirsutus" data-location="Australia"></div>
+<!-- returns a DOMStringMap Object containing all the data elements -->
+
+<script>
+    // Accessed like this:
+    card.dataset.location
+</script>
+
+
+<!-- AFTERNOON NOTES -->
+
+

@@ -1,0 +1,96 @@
+<script>
+
+    let clicked = () => {
+        console.log('you clicked');
+    }
+
+    button.addEventListener('click', clicked);
+
+    // native browser code, constantly listening out for events happening.
+    // You can register events, so that when they occurred.
+    // Event Fired
+
+    search.addEventListener('input', () => {
+        console.log(search.value);
+    });
+    // will fire every character put into the input, like
+    // h
+    // he
+    // hel
+    // hell
+    // etc.
+
+    search.addEventListener('change', () => {
+        console.log(search.value);
+    });
+    // waits until you've made a change or move away, or submitted etc.
+
+    search.addEventListener('focus', () => {
+    });
+    search.addEventListener('blur', () => {
+    });
+    // focus fires when focusing the searchbox and blur is for clicking away from it.
+
+    window.addEventListener('resize', () => { })
+    // fires when user resizes the window constantly
+
+
+    // DEBOUNCING
+    // If you have an event that fires an awful lot, you don't want to do anything too heavy lifting
+    // Debouncing is when it detects you're doing the same event over and over again, to limit how many times it's firing.
+
+    // EVENT HANDLER
+    // This refers to the function being called when the event is fired.
+
+    window.addEventListener('scroll', () => { });
+    // Fires every time you scroll (fires a hell of a lot)
+
+    window.pageYOffset;
+    // Gives the current scroll position
+
+
+    // MINI CHALLENGE
+    let startPosition = window.pageYOffset;
+    // store the page scroll position in a variable.
+    window.addEventListener('scroll', () => {
+        let currentPosition = window.pageYOffset;
+        // Stores the current position everytime the event fires
+        if (currentPosition > startPosition) {
+            console.log('you are scrolling down')
+        } else if (currentPosition < startPosition) {
+            console.log('you are scrolling up')
+        }
+        startPosition = currentPosition;
+    });
+    // Event handler functions only exist when they are called. Hence we need to keep start position stored outside.
+    
+
+    // STATE
+
+    // This following code checks whether one button is clicked first before the other
+
+    let signUp = d.querySelector('button');
+    let contacts = d.getElementById('contact');
+
+    // add a variable that tracks whether the user has clicked on the signup button
+
+    let signedUp = false;
+
+    // add an event listener to the signup button
+
+    signUp.addEventListener('click', () => {
+        signedUp = true;
+    });
+
+    contacts.addEventListener('click', () => {
+        if(signedUp === true){
+            alert("thanks for signing up");
+        } else {
+            alert("you need to sign up first");
+        }
+    });
+
+
+
+
+</script>
